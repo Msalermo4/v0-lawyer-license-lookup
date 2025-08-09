@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "name": "heylexii",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_APP_NAME": "HeyLEXII",
+    "NEXT_PUBLIC_DOMAIN": "heylexii.com",
+    "NEXT_PUBLIC_OWNER_EMAIL": "alvardito92@gmail.com",
+    "NEXT_PUBLIC_OWNER_PHONE": "787-406-0601"
+  },
+  "functions": {
+    "app/api/scraper/route.ts": {
+      "maxDuration": 300
+    },
+    "app/api/sync-data/route.ts": {
+      "maxDuration": 300
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
+}
