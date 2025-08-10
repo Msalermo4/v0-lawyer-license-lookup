@@ -1,0 +1,37 @@
+{
+  "owner": {
+    "email": "alvardito92@gmail.com",
+    "name": "Alvaro",
+    "phone": "787-406-0601",
+    "domain": "heylexii.com",
+    "timezone": "America/Puerto_Rico"
+  },
+  "deployment": {
+    "status": "INITIALIZING",
+    "started": "2024-01-09T19:06:51.000Z",
+    "estimated_completion": "2024-01-16T19:06:51.000Z",
+    "services": {
+      "vercel": {
+        "plan": "pro",
+        "domain": "heylexii.com",
+        "ssl": "auto"
+      },
+      "supabase": {
+        "plan": "pro",
+        "region": "us-east-1"
+      },
+      "upstash": {
+        "plan": "free"
+      }
+    }
+  },
+  "features": {
+    "bilingual": true,
+    "mobile_app": true,
+    "data_scraping": true,
+    "review_system": true,
+    "admin_dashboard": true,
+    "analytics": true,
+    "seo_optimized": true
+  }
+}

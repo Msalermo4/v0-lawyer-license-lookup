@@ -1,6 +1,7 @@
 {
+  "name": "heylexii-com",
+  "alias": ["heylexii.com", "www.heylexii.com"],
   "version": 2,
-  "name": "heylexii",
   "builds": [
     {
       "src": "package.json",
@@ -18,17 +19,17 @@
     }
   ],
   "env": {
-    "NEXT_PUBLIC_APP_NAME": "HeyLEXII",
+    "NODE_ENV": "production",
     "NEXT_PUBLIC_DOMAIN": "heylexii.com",
-    "NEXT_PUBLIC_OWNER_EMAIL": "alvardito92@gmail.com",
-    "NEXT_PUBLIC_OWNER_PHONE": "787-406-0601"
+    "NEXT_PUBLIC_APP_NAME": "HeyLEXII",
+    "NEXT_PUBLIC_OWNER_EMAIL": "alvardito92@gmail.com"
   },
   "functions": {
     "app/api/scraper/route.ts": {
       "maxDuration": 300
     },
     "app/api/sync-data/route.ts": {
-      "maxDuration": 300
+      "maxDuration": 180
     }
   },
   "headers": [
@@ -48,6 +49,13 @@
           "value": "origin-when-cross-origin"
         }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/www/(.*)",
+      "destination": "/$1",
+      "permanent": true
     }
   ]
 }
